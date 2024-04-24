@@ -17,11 +17,12 @@ def find_duplicate_loop(arr):
   return -1
 
 def find_duplicate_set(arr):
-  unique = set(arr)
+  unique = dict.fromkeys(arr[:])
+  string = "".join([str(x) for x in arr])
   for x in unique:
     if(arr.count(x) > 1):
-      string = "".join(arr[:])
-      return string.find(x, string.find(x))
+      x = str(x)
+      return string.find(x, string.find(x) + 1)
 
   return -1
 
