@@ -26,3 +26,25 @@ def countchanges(s1, s2):
 
 print(isanagram("silent", "listen"))
 print(countchanges("liar", "real"))
+
+# Given a string, determine if the are any unique elements in it.
+# Find the last unique element.
+
+def hasunique(str):
+  distinct = dict.fromkeys(str)
+  for x in distinct:
+    if str.count(x) == 1:
+      return True
+
+  return False
+
+def lastunique(str):
+  distinct = dict.fromkeys(str)
+  unique = "None"
+  for x in distinct:
+    if str.count(x) == 1: unique = x
+
+  return unique
+
+print(hasUnique("iranianran"))
+print(lastUnique("uzbek"))

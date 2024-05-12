@@ -30,3 +30,21 @@ arr1 = [5, 4, 4, 3, 2, 1]
 arr2 = [1, 2, 3, 4, 5]
 print(find_duplicate_loop(arr1))
 print(hasduplicate(arr2))
+
+# Given a high-value input, display each number from 1 to the given number with the ff. constraints:
+# Multiples of 3 are excluded (i.e. not displayed).
+# Multiples of 2 are displayed as negative.
+# Multiples of 2 & 3 are displayed as zero.
+
+def displayrange(num):
+  _range = list(range(num + 1))
+  string = ""
+  for x in _range:
+    if x % 3 != 0:
+      if x % 2 == 0: string += str(-x) + " "
+      elif x % 2 == 0 and x % 3 == 0: string += str(0) + " "
+      else: string += str(x) + " "
+  
+  return string
+
+print(displayRange(30))
